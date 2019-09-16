@@ -1,4 +1,14 @@
 # This is the completed azure-pipelines.yaml file from previous steps.
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Microsoft Azure Internal Consumption(a6bee609-891b-4f19-99f8-401cf7eb8d64)'
+    appType: 'webApp'
+    WebAppName: 'subhashpy'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    enableCustomDeployment: true
+    DeploymentType: 'webDeploy'
+    TakeAppOfflineFlag: false
 variables:
   ConnectedServiceName: 'Azure primary'
   WebAppName: 'subhashpy'
